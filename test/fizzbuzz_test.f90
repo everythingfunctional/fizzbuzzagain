@@ -15,6 +15,10 @@ contains
                     "for normal numbers", &
                     [ it("returns that number as a string", check_normal_numbers) &
                     ]) &
+                , describe( &
+                    "for numbers divisible by 3", &
+                    [ it("returns 'fizz'", check_divisible_by_three) &
+                    ]) &
                 ])
     end function
 
@@ -24,5 +28,11 @@ contains
         result_ = &
                 assert_equals("1", fizzbuzz(1)) &
                 .and.assert_equals("2", fizzbuzz(2))
+    end function
+
+    function check_divisible_by_three() result(result_)
+        type(result_t) :: result_
+
+        result_ = assert_equals("fizz", fizzbuzz(3))
     end function
 end module
