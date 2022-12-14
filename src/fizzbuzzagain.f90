@@ -11,8 +11,10 @@ contains
       fizzbuzz = "1"
     else if (number == 2) then
       fizzbuzz = "2"
-    else
+    else if (modulo(number,3) == 0 ) then
       fizzbuzz = "fizz"
+    else 
+      fizzbuzz = "buzz"
     endif
 
   end function fizzbuzz
