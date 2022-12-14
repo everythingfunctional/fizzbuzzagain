@@ -23,6 +23,10 @@ contains
                     "for numbers divisible by 5", &
                     [ it("returns 'buzz'", check_divisible_by_five) &
                     ]) &
+                , describe( &
+                    "for numbers divisible by 5 and 3", &
+                    [ it("returns 'fizzbuzz'", check_divisible_by_fifteen) &
+                    ]) &
                 ])
     end function
 
@@ -46,6 +50,13 @@ contains
         type(result_t) :: result_
 
         result_ = &
-                assert_equals("buzz", fizzbuzz(5))
+                assert_equals("buzz", fizzbuzz(5)) &
+                .and. assert_equals("buzz", fizzbuzz(10))
+    end function
+
+    function check_divisible_by_fifteen() result(result_)
+        type(result_t) :: result_
+
+        result_ = assert_equals("fizzbuzz", fizzbuzz(15))
     end function
 end module
