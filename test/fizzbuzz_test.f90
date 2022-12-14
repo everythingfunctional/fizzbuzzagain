@@ -21,6 +21,8 @@ contains
     function check_normal_numbers() result(result_)
         type(result_t) :: result_
 
-        result_ = assert_equals("1", fizzbuzz(1))
+        result_ = &
+                assert_equals("1", fizzbuzz(1)) &
+                .and.assert_equals("2", fizzbuzz(2))
     end function
 end module
