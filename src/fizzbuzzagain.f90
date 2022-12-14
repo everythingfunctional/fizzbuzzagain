@@ -6,11 +6,13 @@ module fizzbuzzagain
 contains
   function fizzbuzz(number)
     integer, intent(in) :: number
-    character (len=1) :: fizzbuzz
+    character (len=:), allocatable :: fizzbuzz
     if (number == 1) then
       fizzbuzz = "1"
-    else
+    else if (number == 2) then
       fizzbuzz = "2"
+    else
+      fizzbuzz = "fizz"
     endif
 
   end function fizzbuzz
