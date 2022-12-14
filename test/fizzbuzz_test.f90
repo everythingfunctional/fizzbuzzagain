@@ -35,7 +35,8 @@ contains
 
         result_ = &
                 assert_equals("1", fizzbuzz(1)) &
-                .and.assert_equals("2", fizzbuzz(2))
+                .and.assert_equals("2", fizzbuzz(2)) &
+                .and.assert_equals("4", fizzbuzz(4))
     end function
 
     function check_divisible_by_three() result(result_)
