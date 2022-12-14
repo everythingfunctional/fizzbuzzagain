@@ -1,6 +1,6 @@
 module fizzbuzz_test
     use fizzbuzzagain, only: fizzbuzz
-    use veggies, only: result_t, test_item_t, describe, it
+    use veggies, only: result_t, test_item_t, describe, it, assert_equals
 
     implicit none
     private

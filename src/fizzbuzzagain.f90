@@ -2,9 +2,12 @@ module fizzbuzzagain
   implicit none
   private
 
-  public :: say_hello
+  public :: fizzbuzz
 contains
-  subroutine say_hello
-    print *, "Hello, fizzbuzzagain!"
-  end subroutine say_hello
+  function fizzbuzz(number)
+    integer, intent(in) :: number
+    character (len=1) :: fizzbuzz
+    fizzbuzz = "1"
+  end function fizzbuzz
+
 end module fizzbuzzagain
