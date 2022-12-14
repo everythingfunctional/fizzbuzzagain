@@ -57,6 +57,8 @@ contains
     function check_divisible_by_fifteen() result(result_)
         type(result_t) :: result_
 
-        result_ = assert_equals("fizzbuzz", fizzbuzz(15))
+        result_ = &
+                assert_equals("fizzbuzz", fizzbuzz(15)) &
+                .and.assert_equals("fizzbuzz", fizzbuzz(30))
     end function
 end module
